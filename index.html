@@ -2,124 +2,368 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hack or Snooze</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hack or Snooze</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_new.css" type="text/css">
 </head>
 
 <body>
-  <nav>
-    <b><a class="nav-link navbar-brand" href="#" id="nav-all">Hack or Snooze</a></b>
-    <section class="main-nav-links hidden">
-      <span>|</span>
-      <a class="nav-link" href="#" id="nav-submit">submit</a>
-      <span>|</span>
-      <a class="nav-link" href="#" id="nav-favorites">favorites</a>
-      <span>|</span>
-      <a class="nav-link" href="#" id="nav-my-stories">my stories</a>
-    </section>
-    <a class="nav-link nav-right" href="#" id="nav-login">login/create user</a>
-    <span class="nav-link nav-right hidden" id="nav-welcome">
-      <a href="#" id="nav-user-profile"></a>
-    </span>
-    <a class="hidden" id="nav-logout" href="#">
-      <small >(logout)</small>
-    </a>
-    
-    
-  </nav>
-  <section class="articles-container container">
-    <form action="" class="hidden" id="submit-form">
-      <div>
-        <label for="author">author</label>
-        <input id="author" required type="text" placeholder="author name">
-      </div>
-      <div>
-        <label for="title">title</label>
-        <input id="title" required type="text" placeholder="article title">
-      </div>
-      <div>
-        <label for="url">url</label>
-        <input id="url" required type="url" placeholder="article url">
-      </div>
-      <button type="submit">submit</button>
-      <hr>
-    </form>
-    <article>
-      <ol id="all-articles-list" class="articles-list">
-        <h3>Loading...</h3>
-      </ol>
-    </article>
-    <article>
-      <ul id="favorited-articles" class="hidden articles-list">
-      </ul>
-    </article>
-    <article>
-      <ul id="filtered-articles" class="hidden articles-list">
-      </ul>
-    </article>
-    <article>
-      <ul id="my-articles" class="hidden articles-list">
-      </ul>
-    </article>
-  </section>
-  <section class="edit-article-container container">
-    <form action="#" id="edit-article-form" class="hidden" method="post">
-      <h4>Article Information</h4>
-      <div class="edit-input">
-        <label for="edit-title">Title</label>
-        <input id="edit-title" type="text">
-        <button type="submit">change</button>
-      </div>
-    </form>
-  </section>
-  <section class="account-forms-container container">
-    <form action="#" id="login-form" class="account-form hidden" method="post">
-      <h4>Login</h4>
-      <div class="login-input">
-        <label for="login-username">username</label>
-        <input id="login-username" type="text">
-      </div>
-      <div class="login-input">
-        <label for="login-password">password</label>
-        <input id="login-password" type="password">
-      </div>
-      <button type="submit">login</button>
-      <hr>
-    </form>
-    <form action="#" id="create-account-form" class="account-form hidden" method="post">
-      <h4>Create Account</h4>
-      <div class="login-input">
-        <label for="create-account-name">name</label>
-        <input id="create-account-name" type="text">
-      </div>
-      <div class="login-input">
-        <label for="create-account-username">username</label>
-        <input id="create-account-username" type="text">
-      </div>
-      <div class="login-input">
-        <label for="create-account-password">password</label>
-        <input id="create-account-password" type="password">
-      </div>
-      <button type="submit">create account</button>
-    </form>
-  </section>
-  <section id="user-profile" class="container hidden">
-    <h4>User Profile Info</h4>
-    <section>
-      <div id="profile-name">Name:</div>
-      <div id="profile-username">Username:</div>
-      <div id="profile-account-date">Account Created:</div>
-    </section>
-  </section>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  shadow-sm rounded">
+            <b></b><a class="navbar-brand" href="#" id="nav-all">Hack or Snooze</a></b>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active  hidden" id="nav-home-contianer">
+                        <a class="nav-link" href="#" id="nav-home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item  hidden" id="nav-favorites-contianer">
+                        <a class="nav-link" href="#" id="nav-favorites">Favorites</a>
+                    </li>
+                    <li class="nav-item  hidden" id="nav-my-stories-contianer">
+                        <a class="nav-link" href="#" id="nav-my-stories">My stories</a>
+                    </li>
+                    <li class="nav-item dropdown  hidden" id="nav-dropdown-contianer">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More actions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" id="nav-submit" data-toggle="modal"
+                                data-target="#createStoryModal">Submit a new story</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" id="nav-remove" data-toggle="modal"
+                                data-target="#removeModal">Remove account</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="nav-link nav-right" href="#" id="nav-login" data-toggle="modal"
+                        data-target="#LogInModal">login/create user</a>
+                    <span class="nav-link nav-right hidden" id="nav-welcome">
+                        <a href="#" id="nav-user-profile"></a>
+                    </span>
+                    <a class="hidden" id="nav-logout" href="#">
+                        <small>(logout)</small>
+                    </a>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                <section class="articles-container container my-3">
+
+                    <div class="container">
+                        <article>
+                            <ol id="all-articles-list" class="articles-list list-group  shadow-lg rounded">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </ol>
+                        </article>
+                    </div>
+                    <article>
+                        <ul id="favorited-articles" class="hidden articles-list list-group   shadow-lg rounded">
+                        </ul>
+                    </article>
+                    <article>
+                        <ul id="my-articles" class="hidden articles-list  list-group   shadow-lg rounded">
+                        </ul>
+                    </article>
+                </section>
+            </div>
+            <div class="col-11 col-lg-3 mx-3 my-3 mx-sm-0">
+                <section id="user-profile" class="container hidden">
+
+                    <div class="card  shadow-lg rounded">
+                        <div class="card-body">
+                            <h5 class="card-title">User Profile Info</h5>
+                            <hr>
+                            <p class="card-text"><b>Name:</b></p>
+                            <p class="card-text" id="profile-name"></p>
+                            <p class="card-text"><b>Username:</b></p>
+                            <p class="card-text" id="profile-username"></p>
+                            <p class="card-text"><b>Account Created:</b></p>
+                            <p class="card-text" id="profile-account-date">Account Created:</p>
+                            <hr>
+                            <a href="#" class="btn btn-primary" id="editUserBtn" data-toggle="modal"
+                            data-target="#editUserInfoModal">Edit</a>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="CreateAStoryModalLabel"
+        aria-hidden="true" id="createStoryModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createStoryModalLabel">Create a new story</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="submit-form">
+                        <div class="form-group">
+                            <label for="author">Author: </label>
+                            <input id="author" required type="text" placeholder="author name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">title</label>
+                            <input id="title" required type="text" placeholder="article title" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">url</label>
+                            <input id="url" required type="url" placeholder="article url" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                        id="submitNewStory">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="EditStoryModalLabel"
+        aria-hidden="true" id="editStoryModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editStoryModalLabel">Article Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 id='edit-id'>Id: </h5>
+                    <form id="edit-article-form">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Author: </span>
+                                </div>
+                                <input id="edit-author" required type="text" placeholder="author name"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">title</span>
+                                </div>
+                                <input id="edit-title" required type="text" placeholder="article title"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">url</span>
+                                </div>
+                                <input id="edit-url" required type="url" placeholder="article url" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="editStory">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="LogInModalLabel"
+        aria-hidden="true" id="LogInModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="LogInModalLabel">Login / Create user</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" id="login-form" class="account-form" method="post">
+                        <h4>Login</h4>
+                        <div class="login-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">username</span>
+                                </div>
+                                <input id="login-username" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="login-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">password</span>
+                                </div>
+                                <input id="login-password" type="password" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit"  data-dismiss="modal" class="btn btn-primary" id="login">login</button>
+                    </form>
+                    <hr>
+                    <form action="#" id="create-account-form" class="account-form" method="post">
+                        <h4>Create Account</h4>
+                        <div class="login-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">name</span>
+                                </div>
+                                <input id="create-account-name" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="login-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">username</span>
+                                </div>
+                                <input id="create-account-username" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="login-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">password</span>
+                                </div>
+                                <input id="create-account-password" type="password" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" data-dismiss="modal" class="btn btn-primary" id='createNew'>create account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="removeModalLabel">Remove account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>After removing your account, all of your information and stories would be lost perminently. Are
+                        you sure you want to do it?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="deleteAccount">Remove my account</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class= 'modal fade' tabindex="-1" role="dialog" id = "invalidLoginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="invalidLoginModalLabel">Invalid input</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please recheck your login information. If you are first time here, please sign up.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class= 'modal fade' tabindex="-1" role="dialog" id = "invalidSignupModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="invalidSignupModalLabel">Invalid input</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Oops, the login information you chose have been taken, please try something else.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class= 'modal fade' tabindex="-1" role="dialog" id = "editUserInfoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserInfoModalLabel">Edit your information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" id="update-form" class="account-form">
+                        <div class="update-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">name</span>
+                                </div>
+                                <input id="update-name" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="update-input form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">password</span>
+                                </div>
+                                <input id="update-password" type="password" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitChangedUserInfo">Change</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 <script src="api-classes.js"></script>
 <script src="ui.js"></script>
 
