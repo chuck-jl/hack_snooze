@@ -2,3 +2,7 @@
     display: none;
   }
 
+.fa-trash-alt:hover {
+  color: brown;
+
+}
